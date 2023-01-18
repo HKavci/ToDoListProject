@@ -8,17 +8,24 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    background: rgb(63,94,251);
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,252,250,1) 100%);
+    /* background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,252,250,1) 100%); */
+    background-image: url("./assets/images.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .baslik {
-    margin-top: 3rem;
+    margin-top: 5rem;
     margin-bottom: 1rem;
     letter-spacing: .1rem;
+    color: red;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 
@@ -37,9 +44,17 @@ body {
 
 #plus {
     position: relative;
-    right: 35px;
+    right: 70px;
     top: 5px;
     font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#refresh {
+    position: relative;
+    right: 70px;
+    top: 2px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -52,6 +67,9 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     padding: .3rem;
+    background-color: white;
+    position: relative;
+    right: 27px;
 }
 
 #delete{
