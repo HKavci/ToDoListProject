@@ -73,8 +73,6 @@ refresh.addEventListener("click", () => {
 
 input.addEventListener("keydown", (event) => {
     if (event.code === "Enter" || event.code === "numpadEnter") {
-        plus.click();
-        music.play()
     }
 });
 
