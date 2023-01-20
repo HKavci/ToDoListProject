@@ -6,15 +6,13 @@ const refresh = document.getElementById("refresh");
 const music = document.getElementById("background-music");
 
 music.autoplay = true
-music.volume = 0.3
+music.volume = 0.2
 music.loop = true
 
 //Local storage dan veri alımı
 let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
 window.addEventListener("load", () => {
-    music.play()
-    music.volume = 0.3
     getTodoListFromLocalStorage();
 });
 
@@ -25,6 +23,7 @@ const getTodoListFromLocalStorage = () => {
 };
 
 plus.addEventListener("click", (e) => {
+
     if (input.value.trim().length !== 0) {
           const newTodo = {
           id: new Date().getTime(), //anlık milisaniye, uniq id için
@@ -71,6 +70,7 @@ refresh.addEventListener("click", () => {
 
 input.addEventListener("keydown", (event) => {
     if (event.code === "Enter" || event.code === "numpadEnter") {
+        plus.click()
     }
 });
 
