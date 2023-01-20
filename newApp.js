@@ -14,6 +14,7 @@ let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
 window.addEventListener("load", () => {
     music.play()
+    music.volume = 0.3
     getTodoListFromLocalStorage();
 });
 
