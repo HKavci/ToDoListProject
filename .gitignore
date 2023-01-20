@@ -1,0 +1,27 @@
+
+Amacımız sayfa yenilendikten sonra girilen veriler kaybolmasın, yeniden karşıma çıksın.
+Bunun için verileri güncel bir şekilde local storage ta tutmam gerekiyor.
+
+let todoList = JSON.parse(localStorage.getItem("todoList")) || []
+Bu yüzden "todoList" adında global bir değişken tanımladım.
+JSON.parse yöntemiyle string halindeki storage verisini array e dönüştürdüm. Tabi çekme işlemini de getItem("todoList") yaparak sağladım.
+Eğer storage ta birşey yoksa boş array olmasını istedim. Bunun için de || [] yaptım. Bunun yerine new Array() de diyebilirdim.
+
+Sayfamın her yenilenişinde local storage a attığım verilerin otomatik çekilmesini istiyorum. Bunun için window a bir addEventListener ekledim ve içerisine daha sonra hazırlayacağım getTodoListFromLocalStorage() fonksiyonu ekledim. Yani fonksiyon içinde fonksiyon tanımladım. Aşağıdaki şekilde;
+window.addEventListener("load", () => {
+    getTodoListFromLocalStorage();
+})
+
+Onun altına da getTodoListFromLocalStorage() fonksiyonunu tanımladım. Bu fonksiyon todolist i local storage ten alıyor ve UI e ekliyor.
+const getTodoListFromLocalStorage = () => {
+    //! get TodoList from localStorage and load to UI
+    todoList.forEach((todo) => {
+        createTodo(todo)
+    })
+}
+
+
+Best practice te;
+    önce element oluştur    ---> document.createElement("li")
+    sonra class ver         ---> li.classList.add("li")
+    sonra append et         ---> ul.appendChild(li)
