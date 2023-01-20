@@ -25,7 +25,6 @@ const getTodoListFromLocalStorage = () => {
 };
 
 plus.addEventListener("click", (e) => {
-    music.play()
     if (input.value.trim().length !== 0) {
           const newTodo = {
           id: new Date().getTime(), //anlık milisaniye, uniq id için
@@ -49,7 +48,6 @@ const createTodo = (newTodo) => {
 }
 
 ul.addEventListener("click", (e) => {
-    music.play()
     const idAttr = e.target.parentElement.getAttribute("id")
     if (e.target.className == "fa-solid fa-trash-can") {
     e.target.parentElement.remove();
